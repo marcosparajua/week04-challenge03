@@ -1,0 +1,42 @@
+export const CHARACTERS = [
+  {
+    id: '1',
+    name: 'Joffrey Baratheon',
+    house: 'Baratheon',
+    age: 18,
+    isAlive: true,
+    speakLine: 'Vais a morir todos',
+  },
+  {
+    id: '2',
+    name: 'Jaime Lannister',
+    house: 'Lannister',
+    age: 35,
+    isAlive: true,
+    speakLine: 'Primero pego y luego pregunto',
+  },
+  {
+    id: '3',
+    name: 'Daenerys Targaryen',
+    house: 'Targaryen',
+    age: 25,
+    isAlive: true,
+    speakLine: 'Primero pego y luego pregunto',
+  },
+  {
+    id: '4',
+    name: 'Tyrion Lannister',
+    house: 'Lannister',
+    age: 30,
+    isAlive: true,
+    speakLine: 'No sé por qué, pero creo que voy a morir pronto',
+  },
+  {
+    id: '5',
+    name: 'Bronn',
+    house: 'Lannister',
+    age: 40,
+    isAlive: true,
+    speakLine: 'Soy un loser',
+  },
+];

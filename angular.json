@@ -3,5 +3,96 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "GoT": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/go-t",
+      "sourceRoot": "projects/go-t/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/go-t",
+            "index": "projects/go-t/src/index.html",
+            "browser": "projects/go-t/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/go-t/tsconfig.app.json",
+            "assets": [
+              "projects/go-t/src/favicon.ico",
+              "projects/go-t/src/assets"
+            ],
+            "styles": [
+              "projects/go-t/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "GoT:build:production"
+            },
+            "development": {
+              "buildTarget": "GoT:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "GoT:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/go-t/tsconfig.spec.json",
+            "assets": [
+              "projects/go-t/src/favicon.ico",
+              "projects/go-t/src/assets"
+            ],
+            "styles": [
+              "projects/go-t/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
